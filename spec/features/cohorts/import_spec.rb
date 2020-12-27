@@ -35,6 +35,12 @@ RSpec.describe "Cohort Import" do
 
   after(:each) { File.delete(cohort_csv) }
 
+  it "has headers" do
+    expect(CSV.open(cohort_csv, "r").readline).to eq(
+      %w[name female_tag male_tag enclosure location]
+    )
+  end
+
   it "creates cohorts from a CSV file" do
     visit new_cohort_import_path
 
