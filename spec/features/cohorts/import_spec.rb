@@ -6,8 +6,7 @@ RSpec.describe "Cohort Import" do
   before { sign_in user }
 
   it "creates cohorts from a CSV file" do
-
-    facility = create(:facility, name: 'Aquarium of the Pacific', code: 'AOP', organization_id: user.organization.id)
+    create(:facility, name: 'Aquarium of the Pacific', code: 'AOP', organization_id: user.organization.id)
 
     visit new_cohort_import_path
 

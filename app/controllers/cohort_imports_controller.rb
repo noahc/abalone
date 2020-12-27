@@ -1,6 +1,5 @@
 class CohortImportsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     Cohort.create! organization: current_organization
