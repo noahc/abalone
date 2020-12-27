@@ -6,8 +6,6 @@ RSpec.describe "Cohort Import" do
   before { sign_in user }
 
   it "creates cohorts from a CSV file" do
-    create(:facility, name: 'Aquarium of the Pacific', code: 'AOP', organization_id: user.organization.id)
-
     visit new_cohort_import_path
 
     attach_file('cohort_csv', "#{Rails.root}/spec/fixtures/cohorts.csv")
